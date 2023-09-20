@@ -1,0 +1,6 @@
+Finish image swapping in productdetails.js
+Finish Categories in products page.
+Finish Responsive menu if time permits.
+Remove autocomplete in login page.
+Changing code runner exe.config of JS files.
+Changing heart position and Removing heart outer box.

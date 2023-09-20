@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>Cart - Fashion store</title>
+    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="/CSS/noProductFound.css">
+    <link rel="stylesheet" href="/CSS/cart.css">
+</head>
+
+<body>
+
+    <div class="header">
+        {{> navbar}}
+    </div>
+    <h2 class="title" style="margin: 50px 0;">Cart Items</h2>
+    <div class="small-container cart-page">
+        <table>
+            <tr st>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            {{#each products}}
+            <tr onclick="window.location.href='/productdetails/{{this.userid}}/{{this.pid}}';">
+                <td>
+                    <div class="cart-info">
+                        <img src="/images/product{{pid}}.jpg" alt="">
+                        <div>
+                            <p>{{pname}}</p>
+                            <small>Price: <span class="dollar-sign">₹</span>{{price}}</small>
+                            <a href="/cartDelete/{{../userdetails.ID}}/{{pid}}">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><span>{{quantity}}</span></td>
+                <td><span class="dollar-sign">₹</span>{{multiply quantity price}}</td>
+            </tr>
+            {{/each}}
+        </table>
+        {{#if products}}
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td><span class="dollar-sign">₹</span>{{calculateTotalPrice products}}</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td><span class="dollar-sign">₹</span>{{calculateTotalPriceWithTax products}}</td>
+                </tr>
+            </table>
+        </div>
+        <a href="/ordersInsert/{{userdetails.ID}}" class="btn">Order now &#8594;</a>
+        {{else}}
+        <div class="image-container">
+            <img src="/images/product-not-found.gif" alt="Image">
+        </div>
+        {{/if}}
+    </div>
+
+    {{> footer}}
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>Orders - Fashion store</title>
+    <link rel="stylesheet" href="/CSS/noProductFound.css">
+    <link rel="stylesheet" href="/CSS/orders.css">
+</head>
+
+<body>
+
+    <div class="header">
+        {{> navbar}}
+    </div>
+    <h2 class="title" style="margin: 50px 0;">Your Orders</h2>
+    {{#each products}}
+        <div class="small-container cart-page">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+                {{#each this.items}}
+                    <tr onclick="window.location.href='/productdetails/{{this.userid}}/{{this.pid}}';">
+                        <td>
+                            <div class="cart-info">
+                                <img src="/images/product{{this.pid}}.jpg" alt="">
+                                <div>
+                                    <p>{{this.pname}}</p>
+                                    <small>Price: <span class="dollar-sign">₹</span>{{this.price}}</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span>{{this.quantity}}</span></td>
+                        <td><span class="dollar-sign">₹</span>{{multiply this.quantity this.price}}</td>
+                    </tr>
+                {{/each}}
+            </table>
+            <div class="bill-section">
+                <h3>Your order is placed successfully !!!</h3>
+                <table>
+                    <tr>
+                        <td>Order Date</td>
+                        <td>{{dateFormat this.orderdate "DD/MM/YYYY"}}</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td><span class="dollar-sign">₹</span>{{calculateTotalPrice this.items}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td><span class="dollar-sign">₹</span>{{calculateTotalPriceWithTax this.items}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    {{/each}}
+
+    {{#if products}}
+    {{else}}
+        <div class="small-container cart-page">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </table>
+        </div>
+        <div class="image-container">
+            <img src="/images/product-not-found.gif" alt="Image">
+        </div>
+    {{/if}}
+
+    {{> footer}}
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

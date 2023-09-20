@@ -1,0 +1,69 @@
+create database login_details_csp;
+use login_details_csp;
+
+create table users(
+ID int auto_increment primary key,
+NAME varchar(100),
+EMAIL varchar(100),
+PASS varchar(200)
+);
+
+select * from users;
+
+create table products(
+pid int auto_increment primary key,
+pname varchar(30),
+price float,
+rating int,
+description varchar(100),
+details varchar(200),
+liked int,
+category varchar(50)
+);
+ 
+// Mens T-Shirt 20 4
+// Women lehenga 23 4
+// Girls Frock 30 5
+// Boys Sherwani 25 4
+
+update products set description='Red printed T-Shirt by HRX',details='The HRX Mens Active t-shirt is the perfect addition to your fall wardrobe. This basic T-shirt is easy to style for workouts as well as casual evenings.' where pid>=1 and pid<=8; 
+
+select * from products;
+
+CREATE TABLE IF NOT EXISTS cart (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  userid INT,
+  pid INT,
+  quantity INT,
+  size varchar(50),
+  FOREIGN KEY (userid) REFERENCES users(ID),
+  FOREIGN KEY (pid) REFERENCES products(pid)
+);
+
+drop table cart;
+select * from cart;
+
+CREATE TABLE IF NOT EXISTS orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  userid INT,
+  pid INT,
+  quantity INT,
+  size varchar(50),
+  orderdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (userid) REFERENCES users(ID),
+  FOREIGN KEY (pid) REFERENCES products(pid)
+);
+
+select * from orders;
+delete from orders where userid = 1;
+
+CREATE TABLE IF NOT EXISTS wishlist (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  userid INT,
+  pid INT,
+  liked INT,
+  FOREIGN KEY (userid) REFERENCES users(ID),
+  FOREIGN KEY (pid) REFERENCES products(pid)
+);
+
+select * from wishlist;

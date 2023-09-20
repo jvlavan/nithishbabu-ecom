@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <img src="/images/mainlogo.jpg" alt="Oops" width="125px">
+        </div>
+        <nav>
+            <ul id="MenuItems" style="max-height:0px">
+                <li><a href="/home/{{userdetails.ID}}">Home</a></li>
+                <li><a href="/products/{{userdetails.ID}}">Products</a></li>
+                <li><a href="">Contact</a></li>
+                <li>
+                    <div class="action">
+                        <div class="profile" onclick="dropmenutoggle();" >
+                            <a href="#">Account</a>
+                        </div>
+                        <div class="menu" id="dropdown-menu">
+                            <ion-icon name="person-circle-outline" class="usericon"></ion-icon>
+                            <h3>Welcome<br><span>{{userdetails.NAME}}</span><br><span>{{userdetails.EMAIL}}</span></h3>
+                            <ul>
+                                <li><ion-icon name="bag-check-outline"></ion-icon><a href="/orders/{{userdetails.ID}}">Your Orders</a></li>
+                                <li><ion-icon name="cart-outline"></ion-icon><a href="/cart/{{userdetails.ID}}">Your Cart</a></li>
+                                <li><ion-icon name="heart"></ion-icon><a href="/wishlist/{{userdetails.ID}}">Your Wishlist</a></li>
+                                <li><ion-icon name="log-out-outline"></ion-icon><a href="/login">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

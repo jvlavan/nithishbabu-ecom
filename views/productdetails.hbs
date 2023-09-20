@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>Product details - Fashion store</title>
+    <link rel="stylesheet" href="/CSS/productdetails.css">
+</head>
+
+<body>
+
+    <div class="header">
+        {{> navbar}}
+    </div>
+
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col2" id="lcolumn">
+                <img src="/images/product{{product.pid}}.jpg" id="product-{{product.pid}}" alt="{{product.pname}}" width="100%">
+            </div>
+            <div class="col2" id="rcolumn">
+                <p>Home <span class="red-slash">/</span> {{product.pname}}</p>
+                <h1>{{product.description}}</h1>
+                <h4><span class="dollar-sign">₹ </span>{{product.price}}</h4>
+                <div class="select-wrapper">
+                    <select id="size">
+                    <option>Select size</option>
+                    <option>XXL</option>
+                    <option>XL</option>
+                    <option>Large</option>
+                    <option>Medium</option>
+                    <option>Small</option>
+                    </select>
+                    {{#if (eq product.liked 0)}}
+                        <a href="/addToWishlist/{{userdetails.ID}}/{{product.pid}}" class="wbtn" id="wishlistButton">
+                        <ion-icon name="heart-outline"></ion-icon>
+                        </a>
+                    {{else}}
+                        <a href="/addToWishlist/{{userdetails.ID}}/{{product.pid}}" class="wbtn" id="wishlistButton">
+                        <ion-icon name="heart"></ion-icon>
+                        </a>
+                    {{/if}}
+                </div>
+                <input type="number" id="quantity" value="1">
+                <a href="#" class="btn" id="addToCartButton">Add To Cart</a>
+                <h3>Product Details <ion-icon name="reader-outline"></ion-icon></h3>
+                <br> 
+                <p>{{product.details}}</p>
+                </div>
+        </div>
+    </div>
+
+    {{> footer}}
+
+    <script>
+        // JavaScript code to handle the Add To Cart button click event
+        const addToCartButton = document.getElementById('addToCartButton');
+        addToCartButton.addEventListener('click', () => {
+            const sizeSelect = document.getElementById('size');
+            const quantityInput = document.getElementById('quantity');
+            const selectedSize = sizeSelect.value;
+            const selectedQuantity = quantityInput.value;
+
+            // Construct the URL with the selected size and quantity
+            const userid = "{{userdetails.ID}}";
+            const productid = "{{product.pid}}";
+            const url = `/cartInsert/${userid}/${productid}?size=${selectedSize}&quantity=${selectedQuantity}`;
+
+            // Redirect the user to the cart route
+            window.location.href = url;
+        });
+    </script>
+
+    <script>
+        // Display the alert pop-up window
+        window.onload = function() {
+            var successMessage = "{{ successMessage }}";
+            if (successMessage) {
+                alert(successMessage);
+            }
+        };
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

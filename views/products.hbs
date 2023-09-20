@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>Products - Fashion store</title>
+    <link rel="stylesheet" href="/CSS/products.css">
+</head>
+
+<body>
+
+    <div class="header">
+        {{> navbar}}
+    </div>
+ 
+    <div class="small-container">
+        <h2 class="title" style="margin: 50px 0;">Products</h2>
+        <div class="panel">
+            <div class="categories">
+                <div class="col3 active" id="category-all">
+                    <h3>All</h3>
+                </div>
+                <div class="col3" id="category-men">
+                    <h3>Men</h3>
+                </div>
+                <div class="col3" id="category-women">
+                    <h3>Women</h3>
+                </div>
+                <div class="col3" id="category-kids">
+                    <h3>Kids</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="product-container">
+            <div class="row" id="product-row">
+                {{#each products}}
+                <div class="col4" data-category = "{{category}}">
+                    <a href="/productdetails/{{../userdetails.ID}}/{{pid}}">
+                        <img src="/images/product{{pid}}.jpg" id="product-{{pid}}" alt="Product Image">
+                    </a>
+                    <div class="below-container">
+                        <div class="prod-row">
+                            <h4>{{pname}}</h4>
+                            <div class="rating">
+                                <span>
+                                    {{{getRatingHTML rating}}}
+                                </span>
+                            </div>
+                            <p>₹{{formatPrice price}}</p>
+                        </div>
+                        <div class="prod-col">
+                            {{#if (eq liked 0)}}
+                                <a href="/addToWishlist/{{../userdetails.ID}}/{{pid}}" class="wbtn" id="wishlistButton">
+                                <ion-icon name="heart-outline"></ion-icon>
+                                </a>
+                            {{else}}
+                                <a href="/addToWishlist/{{../userdetails.ID}}/{{pid}}" class="wbtn" id="wishlistButton">
+                                    <ion-icon name="heart"></ion-icon>
+                                </a>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                {{#if @index}}
+                    {{#if (eq (mod @index 4) 3)}}
+                        <div class="row"></div>
+                    {{/if}}
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col5"><img src="/images/brandlogo1.1.png" alt="Oops!"></div>
+                <div class="col5"><img src="/images/brandlogo6.1.png" alt="Oops!"></div>
+                <div class="col5"><img src="/images/brandlogo3.jpg" alt="Oops!"></div>
+                <div class="col5"><img src="/images/brandlogo4.1.png" alt="Oops!"></div>
+                <div class="col5"><img src="/images/brandlogo7.png" alt="Oops!"></div>
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+    <script>
+        // Get the category elements
+        const categoryAll = document.getElementById('category-all');
+        const categoryMen = document.getElementById('category-men');
+        const categoryWomen = document.getElementById('category-women');
+        const categoryKids = document.getElementById('category-kids');
+
+        // Add click event listeners to the category elements
+        categoryAll.addEventListener('click', () => {
+            filterProducts('all');
+            categoryAll.classList.add('active');
+            categoryMen.classList.remove('active');
+            categoryWomen.classList.remove('active');
+            categoryKids.classList.remove('active');
+        });
+        categoryMen.addEventListener('click', () => {
+            filterProducts('men');
+            categoryAll.classList.remove('active');
+            categoryMen.classList.add('active');
+            categoryWomen.classList.remove('active');
+            categoryKids.classList.remove('active');
+        });
+        categoryWomen.addEventListener('click', () => {
+            filterProducts('women');
+            categoryAll.classList.remove('active');
+            categoryMen.classList.remove('active');
+            categoryWomen.classList.add('active');
+            categoryKids.classList.remove('active');
+        });
+        categoryKids.addEventListener('click', () => {
+            filterProducts('kids');
+            categoryAll.classList.remove('active');
+            categoryMen.classList.remove('active');
+            categoryWomen.classList.remove('active');
+            categoryKids.classList.add('active');
+        });
+
+        // Function to filter and display products based on the selected category
+        function filterProducts(category) {
+            // Get all product elements
+            const productElements = document.querySelectorAll('.col4');
+
+            // Loop through the product elements and show/hide based on the category
+            productElements.forEach((productElement) => {
+                const productCategory = productElement.dataset.category;
+
+                // Show/hide the product based on the category
+                if (category === 'all' || productCategory === category) {
+                    productElement.style.display = 'inline-block';
+                } else {
+                    productElement.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>

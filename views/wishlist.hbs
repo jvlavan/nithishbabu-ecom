@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>Wishlist - Fashion store</title>
+    <link rel="stylesheet" href="/CSS/products.css">
+    <link rel="stylesheet" href="/CSS/noProductFound.css">
+</head>
+
+<body>
+
+    <div class="header">
+        {{> navbar}}
+    </div>
+
+    <div class="small-container">
+        <h2 class="title" style="margin: 50px 0;">Your  Wishlist</h2>
+        <div class="row" id="product-container">
+            <div class="row">
+                {{#each products}}
+                <div class="col4">
+                    <a href="/productdetails/{{../userdetails.ID}}/{{pid}}">
+                        <img src="/images/product{{pid}}.jpg" id="product-{{pid}}" alt="Product Image">
+                    </a>
+                    <div class="below-container">
+                        <div class="prod-row">
+                            <h4>{{pname}}</h4>
+                            <div class="rating">
+                                <span>
+                                    {{{getRatingHTML rating}}}
+                                </span>
+                            </div>
+                            <p><span class="dollar-sign">₹ </span>{{formatPrice price}}</p>
+                        </div>
+                        <div class="prod-col">
+                            <a href="/addToWishlist/{{../userdetails.ID}}/{{pid}}" class="wbtn" id="wishlistButton"><ion-icon name="heart"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+                {{#if @index}}
+                    {{#if (eq (mod @index 4) 3)}}
+                        <div class="row"></div>
+                    {{/if}}
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        {{#if products}}
+        {{else}}
+        <div class="image-container" style="align-items:normal">
+            <img src="/images/product-not-found.gif" alt="Image">
+        </div>
+        {{/if}}
+    </div>
+
+    {{> footer}}
+
+    <script>
+        // Display the alert pop-up window
+        window.onload = function() {
+            var successMessage = "{{ successMessage }}";
+            if (successMessage) {
+                alert(successMessage);
+            }
+        };
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>

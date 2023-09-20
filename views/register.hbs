@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/login_csp.css">
+    <title>Registration - Fashion Store</title>
+</head>
+
+<body>
+    <section>
+        <div class="form-box-reg">
+            <div class="form-value">
+                <form action="/auth/register" method="post">
+                    <h2>Registration</h2>
+                    {{#if msg}}
+                        <p class="{{msg_type}}">{{msg}}</p>
+                    {{/if}}
+                    <div class="input-box">
+                        <ion-icon name="person"></ion-icon>
+                        <input type="text" name="name" id="name" required>
+                        <label for="">Username</label>
+                    </div>
+                    <div class="input-box">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" name="email" id="email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="password" id="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <div class="input-box">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="confirm_password" id="confirm_password" required>
+                        <label for="">Confirm Password</label>
+                    </div>
+                    <button type="submit">Register</button>
+                    <div class="register">
+                        <p>
+                            Already have an account? <a href="/" >Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

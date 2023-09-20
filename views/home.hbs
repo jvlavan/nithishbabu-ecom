@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>Home - Fashion Store</title>
+</head>
+
+<body>
+
+    <div class="header">
+        {{> navbar}}
+        <div class="row">
+            <div class="col2">
+                <img src="/images/transparent.png" alt="Oops">
+            </div>
+            <div class="col2">
+                <h1>Be Daring,<br>Be Different,<br>Be You!</h1>
+                <p>
+                    "Fashion is the armor to survive the 
+                    <br>reality of everyday life"
+                </p>
+                <a href="/products/{{userdetails.ID}}" class="btn">Explore Now &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-container">
+        <h2 class="title">Top Picks</h2>
+        <div class="row" id="product-container"></div>
+    </div>
+
+    <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col3">
+                    <img src="/images/category1.jpg" alt="Oops" >
+                </div>
+                <div class="col3">
+                    <img src="/images/category2.png" alt="Oops" >
+                </div>
+                <div class="col3">
+                    <img src="/images/category3.png" alt="Oops" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row" id="product-container"></div>
+    </div>
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col2-offer">
+                    <img src="/images/transparent.png" alt="Oops">
+                </div>
+                <div class="col2-offer">
+                    <p>Exclusive Discounts on</p>
+                    <h1>Women Frocks</h1>
+                    <small>The designer collections of all women clothes are available at an offer!<br>Grab your clothes! Happy Shopping!<br></small>
+                    <a href="/products/{{userdetails.ID}}" class="btn">Buy now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-container">
+        <h2 class="title">From Your Side</h2>
+        <div class="row" id="product-container"></div>
+    </div>
+
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col3">
+                    <i class="fa fa-quote-left" ></i>
+                    <p>I absolutely love shopping at this online fashion store! Their collection is so trendy and stylish, and the quality of their products is fantastic. The website is user-friendly, and the shipping was fast. Highly recommended!</p>
+                    <div class="rating">
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star-o" ></i>
+                    </div>
+                    <img src="/images/testimonial1.png" alt="Oops" >
+                    <h3>John Kramer</h3>
+                </div>
+                <div class="col3">
+                    <i class="fa fa-quote-left" ></i>
+                    <p>I can't say enough good things about this online fashion store. Not only do they have a wide variety of fashionable clothing, but their customer service is top-notch. I had a question about sizing, and their team responded promptly and helped me find the perfect fit. I've become a loyal customer!</p>
+                    <div class="rating">
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star-o" ></i>
+                    </div>
+                    <img src="/images/testimonial2.png" alt="Oops" >
+                    <h3>Amanda Young</h3>
+                </div>
+                <div class="col3">
+                    <i class="fa fa-quote-left" ></i>
+                    <p>I've had the best shopping experience with this online fashion store. The clothing is always on point, and the prices are affordable. But what sets them apart is their attention to detail. The packaging is beautiful, and it feels like receiving a gift every time. I highly recommend giving them a try!</p>
+                    <div class="rating">
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star-o" ></i>
+                    </div>
+                    <img src="/images/testimonial3.png" alt="Oops" >
+                    <h3>Mark Hoffman</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-container">
+        <h2 class="title">Top Brands</h2>
+        <div class="row" id="product-container"></div>
+    </div>
+
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col5"><img src="/images/brandlogo1.1.png" alt="Oops!"></div>
+                <div class="col5"><img src="/images/brandlogo6.1.png" alt="Oops!"></div>
+                <div class="col5"><img src="/images/brandlogo3.jpg" alt="Oops!"></div>
+                <div class="col5"><img src="/images/brandlogo4.1.png" alt="Oops!"></div>
+                <div class="col5"><img src="/images/brandlogo7.png" alt="Oops!"></div>
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

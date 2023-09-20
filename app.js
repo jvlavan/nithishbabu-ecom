@@ -1,5 +1,5 @@
 const express = require("express"); //Framework for Node.JS
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const app = express();
 const path = require("path");
 const hbs = require("hbs"); //view engine

@@ -4,9 +4,9 @@
 <head>
     {{> head}}
     <title>Cart - Fashion store</title>
-    <link rel="stylesheet" href="/CSS/home.css">
-    <link rel="stylesheet" href="/CSS/noProductFound.css">
-    <link rel="stylesheet" href="/CSS/cart.css">
+    <link rel="stylesheet" href="https://nithish-babu-ecom.surge.sh/public/CSS/home.css">
+    <link rel="stylesheet" href="https://nithish-babu-ecom.surge.sh/public/CSS/noProductFound.css">
+    <link rel="stylesheet" href="https://nithish-babu-ecom.surge.sh/public/CSS/cart.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
             <tr onclick="window.location.href='/productdetails/{{this.userid}}/{{this.pid}}';">
                 <td>
                     <div class="cart-info">
-                        <img src="/images/product{{pid}}.jpg" alt="">
+                        <img src="https://nithish-babu-ecom.surge.sh/public/images/product{{pid}}.jpg" alt="">
                         <div>
                             <p>{{pname}}</p>
                             <small>Price: <span class="dollar-sign">₹</span>{{price}}</small>
@@ -59,7 +59,7 @@
         <a href="/ordersInsert/{{userdetails.ID}}" class="btn">Order now &#8594;</a>
         {{else}}
         <div class="image-container">
-            <img src="/images/product-not-found.gif" alt="Image">
+            <img src="https://nithish-babu-ecom.surge.sh/public/images/product-not-found.gif" alt="Image">
         </div>
         {{/if}}
     </div>

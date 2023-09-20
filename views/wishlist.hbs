@@ -4,8 +4,8 @@
 <head>
     {{> head}}
     <title>Wishlist - Fashion store</title>
-    <link rel="stylesheet" href="/CSS/products.css">
-    <link rel="stylesheet" href="/CSS/noProductFound.css">
+    <link rel="stylesheet" href="https://nithish-babu-ecom.surge.sh/public/CSS/products.css">
+    <link rel="stylesheet" href="https://nithish-babu-ecom.surge.sh/public/CSS/noProductFound.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                 {{#each products}}
                 <div class="col4">
                     <a href="/productdetails/{{../userdetails.ID}}/{{pid}}">
-                        <img src="/images/product{{pid}}.jpg" id="product-{{pid}}" alt="Product Image">
+                        <img src="https://nithish-babu-ecom.surge.sh/public/images/product{{pid}}.jpg" id="product-{{pid}}" alt="Product Image">
                     </a>
                     <div class="below-container">
                         <div class="prod-row">
@@ -49,7 +49,7 @@
         {{#if products}}
         {{else}}
         <div class="image-container" style="align-items:normal">
-            <img src="/images/product-not-found.gif" alt="Image">
+            <img src="https://nithish-babu-ecom.surge.sh/public/images/product-not-found.gif" alt="Image">
         </div>
         {{/if}}
     </div>

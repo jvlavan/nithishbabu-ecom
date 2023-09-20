@@ -1,0 +1,162 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}  
+
+/*Header*/
+
+.header
+{
+    background: #000;
+    margin-bottom: 50px;
+}
+
+
+.logo img
+{
+    display: inline-flex;
+    width:200px;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Merriweather', serif; */
+}
+.navbar
+{
+    display: flex ;
+    align-items: center;
+    padding: 20px 0px;
+}
+nav
+{
+    flex: 1;
+    text-align: right;
+}
+nav ul
+{
+    display:inline-block;
+    list-style-type: none;
+}
+nav ul li
+{
+    display: inline-block;
+    margin-right: 20px;
+}
+.container{
+    max-width: 1300px;
+    margin:auto;
+    /* padding-left: 25px;
+    padding-right: 25px; */
+}
+a
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    transition: 0.4s;
+}
+
+a:hover
+{
+    color: #ff523b;
+}
+.container p
+{
+    color: white;
+}
+
+
+/* Footer */
+
+.footer
+{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer p
+{
+    color: #8a8a8a;
+}
+.footer h3
+{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col1,.footer-col2,.footer-col3,.footer-col4
+{
+    min-width: 250px;
+    margin-bottom: 20px;
+
+}
+.footer-col1
+{
+    flex-basis: 30%;
+}
+.footer-col2
+{
+    flex:1;
+    text-align: center;
+}
+.footer-col2 img
+{
+    width:180px;
+    margin-bottom: 20px;
+}
+.footer-col3,.footer-col4
+{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul
+{
+    list-style-type: none;
+}
+.footer hr
+{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.copyright
+{
+    text-align: center;
+}
+.menu-icon
+{
+    width:28px;
+    margin-left: 20px;
+    display: none;
+}
+
+
+@media only screen and (max-width: 800px)
+{
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    nav ul li
+    {
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: #fff;
+    }
+    .menu-icon
+    {
+        display: block;
+        cursor: pointer;
+    }
+}

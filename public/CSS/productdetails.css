@@ -1,0 +1,132 @@
+
+/*Single product Details */
+
+select 
+{
+    border: 1px solid #ff523b;
+    padding: 5px;
+}
+.single-product {
+    margin-top: 80px;
+}
+.single-product .row .col2 h1 {
+    color: #555;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.single-product .row .col2 p{
+    color: black;
+}
+
+.single-product .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 60px;
+}
+
+.single-product .col2 img {
+    padding: 0;
+    max-width: 100%;
+}
+
+.single-product .col2 {
+    padding: 20px;
+    flex-basis: 40%;
+    min-width: 300px;
+}
+
+.single-product ion-icon {
+    color: #ff523b;
+    margin-left: 10px;
+
+}
+
+.single-product h4 {
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+
+/* .single-product select {
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+} */
+
+.single-product input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #ff523b;
+}
+
+.single-product input:focus {
+    outline: none;
+}
+
+.small-img-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+
+
+.select-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.select-wrapper select {
+    margin-right: 10px;
+    flex: 1;
+    /* Added flex: 1 to make the select box expand and fill the remaining space */
+}
+
+.dollar-sign {
+    color: #ff523b;
+  }
+
+.red-slash {
+    color: #ff523b;
+  }
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .row {
+        text-align: center;
+    }
+
+    .col2,
+    .col3,
+    .col4 {
+        flex-basis: 100%;
+    }
+
+    .single-product .row {
+        text-align: left;
+    }
+
+    .single-product .col-2 {
+        padding: 20px 0;
+    }
+
+    .single-product h1 {
+        font-size: 26px;
+        line-height: 32px;
+
+    }
+}

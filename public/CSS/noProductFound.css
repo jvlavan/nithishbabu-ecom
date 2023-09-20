@@ -1,0 +1,30 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 10px;
+  }
+  
+  .image-container img {
+    max-width: 50%;
+    max-height: 50%;
+  }
+
+  .below-container {
+    display: flex;
+    align-items: center; 
+}
+
+.prod-row {
+    margin: 10px 10px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.prod-col {
+    margin: 10px 10px;
+    padding-left: 20px;
+}

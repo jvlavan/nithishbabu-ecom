@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap'); */
+nav ul li .action
+{
+    display: inline-block;
+    margin-right: 20px;
+    overflow: visible;
+}
+
+nav ul li .action .profile{
+    /* position: relative; */
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+nav ul li .action .profile a{
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li .action .menu{
+    position: absolute;
+    top: 90px;
+    right: 75px;
+    padding: 10px 20px;
+    background: #fff;
+    width: max-content;
+    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: 0.5s;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li .action .menu .usericon{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    /* padding: 10px 0; */
+    /* font-weight: 500; */
+    font-size: 80px;
+    /* color: #555; */
+    line-height: 1rem;
+}
+
+nav ul li .action .menu::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+    z-index: 0;
+}
+
+nav ul li .action .menu.active{
+    visibility: visible;
+    opacity: 1;
+    top: 90px;
+    right: 75px;
+}
+
+nav ul li .action .menu h3{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 18px;
+    color:#ff523b;
+    line-height: 1.2em;
+}
+
+
+nav ul li .action .menu h3 span{
+    font-size: 14px;
+    color: #cecece;
+
+}
+
+nav ul li .action .menu ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav ul li .action .menu ul li{
+    color: black;
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+}
+
+nav ul li .action .menu ul li ion-icon{
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+nav ul li .action .menu ul li:hover ion-icon{
+    opacity: 1;
+}
+
+nav ul li .action .menu ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+nav ul li .action .menu ul li:hover a{
+    color: #ff523b;
+
+}
